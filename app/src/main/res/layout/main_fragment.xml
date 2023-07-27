@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/overAllLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".testfoodapplication.MainActivity">
+
+        <TextView
+            android:id="@+id/everything_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:textColor="@color/black"
+            android:textAllCaps="false"
+            android:text="Everything you need"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/profile_pic"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <ImageView
+            android:id="@+id/profile_pic"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="5dp"
+            android:src="@drawable/profile_pic"
+            app:layout_constraintStart_toEndOf="@id/everything_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+<!--        <EditText-->
+<!--            android:id="@+id/searchFood"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:background="@drawable/rectangular_search_box"-->
+<!--            android:hint="Search Food"-->
+<!--            android:paddingHorizontal="5dp"-->
+<!--            android:imeOptions="actionDone"-->
+<!--            android:drawableStart="@drawable/ic_round_search_24"-->
+<!--            android:singleLine="true"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="15sp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:layout_marginHorizontal="5dp"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="35dp"
+            app:layout_constraintBottom_toBottomOf="@id/overAllLayout"
+            app:layout_constraintTop_toBottomOf="@+id/everything_text"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/categoryRV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/everything_text"
+                tools:listitem="@layout/category_item" />
+
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/main_fragment"
+    android:id="@+id/mobile_navgraph">
+
+    <fragment
+        android:id="@+id/main_fragment"
+        android:name="com.example.testfoodapplication.testfoodapplication.view.home.MainFragment"
+        android:label="mainFragment">
+
+        <action
+            android:id="@+id/actionFromMainFragmentToSettingFragment"
+            app:destination="@+id/setting_fragment" />
+
+        <action
+            android:id="@+id/actionFromMainFragmentToTransactionFragment"
+            app:destination="@+id/transaction_fragment"/>
+
+        <action
+            android:id="@+id/actionFromMainFragmentToAddItemFragment"
+            app:destination="@+id/add_item_fragment"/>
+
+        <action
+            android:id="@+id/actionFromMainFragmentToCartFragment"
+            app:destination="@+id/cart_fragment"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/setting_fragment"
+        android:name="com.example.testfoodapplication.testfoodapplication.view.settings.SettingFragment"
+        android:label="settingFragment">
+
+        <action
+            android:id="@+id/actionFromSettingFragmentToMainFragment"
+            app:destination="@+id/main_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/transaction_fragment"
+        android:name="com.example.testfoodapplication.testfoodapplication.view.transaction.TransactionFragment"
+        android:label="transactionFragment">
+
+        <action
+            android:id="@+id/actionFromTransactionFragmentToMainFragment"
+            app:destination="@+id/main_fragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/add_item_fragment"
+        android:name="com.example.testfoodapplication.testfoodapplication.view.addItem.AddItemFragment"
+        android:label="addItemFragment">
+
+        <action
+            android:id="@+id/actionFromAddItemFragmentToMainFragment"
+            app:destination="@+id/main_fragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/cart_fragment"
+        android:name="com.example.testfoodapplication.testfoodapplication.view.cart.CartFragment"
+        android:label="cartFragment">
+
+        <action
+            android:id="@+id/actionFromCartFragmentToMainFragment"
+            app:destination="@id/main_fragment"/>
+
+    </fragment>
+
+</navigation>
